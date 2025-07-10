@@ -7,11 +7,11 @@ The folder contains all sources code of the proposed framework.
 ### 3. Evaluations
 The folder contains the scripts for metrics evaluation, significance tests, and molecular dynamic (MD) analysis.
 ### 4. Proposed_Sample
-The folder contains the molecular candidates genrated from the proposed framework for all three trials. 
+The folder contains the molecular candidates (SMILES) genrated from the proposed framework for all three trials. 
 ### 5. FREED_Sample
-The folder contains the molecular candidates genrated from the FREED++ framework for all three trials.
+The folder contains the molecular candidates (SMILES) genrated from the FREED++ framework for all three trials.
 ### 6. ParetoDrug_Sample
-The folder contains the molecular candidates genrated from the ParetoDrug framework for all three trials.
+The folder contains the molecular candidates (SMILES) genrated from the ParetoDrug framework for all three trials.
 ### 7. REINVENT_Sample
 The folder contains the molecular candidates genrated from the REINVENT4 framework for all three trials.
 ### 8. packages.txt
