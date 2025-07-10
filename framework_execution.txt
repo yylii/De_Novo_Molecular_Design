@@ -1,0 +1,46 @@
+#training and sampling
+python main.py \
+    --exp_root  \
+    --alert_collections alert_collections.csv \
+    --fragments fragment_library.json \
+    --receptor pin1_6o34.pdbqt \
+    --vina_program /home/user/Framework/utils/qvina02 \
+    --starting_smile "c1([*:1])c([*:2])ccc([*:3])c1" \
+    --fragmentation crem \
+    --num_sub_proc 12 \
+    --n_conf 1 \
+    --exhaustiveness 1 \
+    --save_freq 50 \
+    --epochs 200 \
+    --commands "train,sample" \
+    --reward_version soft \
+    --box_center "-9.41 -23.49 8.35" \
+    --box_size "43 48 43" \
+    --seed 100 \
+    --name jobname
+    --objectives "DockingScore,SAS"
+    --weights "0.3"
+    
+
+#docking scores and synthetic assessability evaluation
+python main.py \
+    --exp_root  \
+    --alert_collections alert_collections.csv \
+    --fragments fragment_library.json \
+    --receptor /pin1_6o34.pdbqt \
+    --vina_program /home/user/Framework/utils/qvina02 \
+    --starting_smile "c1([*:1])c([*:2])ccc([*:3])c1" \
+    --fragmentation crem \
+    --num_sub_proc 12 \
+    --n_conf 1 \
+    --exhaustiveness 1 \
+    --save_freq 50 \
+    --epochs 200 \
+    --commands "train,sample" \
+    --reward_version soft \
+    --box_center "-9.41 -23.49 8.35" \
+    --box_size "43 48 43" \
+    --seed 100 \
+    --name jobname \
+    --objectives "DockingScore,SAS" --weights "0.3"
+    --unique_k 1000
