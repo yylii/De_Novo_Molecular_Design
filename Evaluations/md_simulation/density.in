@@ -1,0 +1,18 @@
+&cntrl
+  imin=0,          ! MD run (not minimization)
+  irest=1, ntx=5,  ! New simulation (no restart), coordinates only input
+  nstlim=50000,    ! Number of MD steps (50000 × 2 fs = 100 ps)
+  dt=0.002,        ! Timestep in ps (2 fs)
+  ntc=2, ntf=2,    ! SHAKE constraints on bonds involving hydrogen
+  cut=10.0,        ! Nonbonded cutoff distance in Å
+  ntb=2,           ! Constant pressure periodic boundary conditions (NPT)
+  ntp=1,           ! Isotropic pressure scaling (1 atm target)
+  pres0=1.0,       ! Target pressure in atm
+  taup=2.0,        ! Pressure relaxation time (ps)
+  ntt=3,           ! Langevin thermostat for temperature control
+  gamma_ln=2.0,    ! Collision frequency for Langevin thermostat (ps^-1)
+  temp0=300.0,     ! Target temperature in K
+  ntr=1,           ! Apply positional restraints
+  restraint_wt=5.0,! Restraint force constant (kcal/mol·Å^2)
+  restraintmask=':1-151 & !@H=', ! Restrain heavy atoms of protein and ligand (replace XXX with residue number)
+/

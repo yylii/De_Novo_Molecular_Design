@@ -1,0 +1,5 @@
+parm /home/yy33li/scratch/md_ffreed/lig2/com_solv.prmtop
+trajin /home/yy33li/scratch/md_ffreed/lig2/outputs/prod.nc
+reference /home/yy33li/scratch/md_ffreed/lig2/outputs/prod.nc 1
+rms backbone reference out /home/yy33li/scratch/md_ffreed/lig2/outputs/rmsd_backbone.dat :1-250@CA,C,N
+run

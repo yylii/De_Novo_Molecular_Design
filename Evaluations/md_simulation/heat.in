@@ -1,0 +1,23 @@
+Gradual heating with weak restraints
+&cntrl
+  imin=0,          ! MD run
+  irest=0, ntx=1,  ! New simulation (no restart)
+  nstlim=25000,    ! 25000 steps × 2 fs = 50 ps
+  dt=0.002,        ! 2 fs timestep
+  ntc=2, ntf=2,    ! SHAKE on hydrogens
+  cut=10.0,        ! 10 Å cutoff for nonbonded
+  ntb=1,           ! Constant volume (NVT)
+  ntpr=500, ntwx=500, ! Print energies and coordinates every 1 ps
+  ntt=3, gamma_ln=2.0, ! Langevin thermostat with collision freq = 2 ps⁻¹
+  tempi=0.0,       ! Initial temperature (K)
+  temp0=300.0,     ! Target temperature (K)
+  ig=-1,           ! Random seed
+  ntr=1,           ! Apply restraints
+  restraint_wt=5.0, ! Moderate restraint force constant (kcal/mol·Å²)
+  restraintmask=':1-151 & !@H=',  ! Restrain all heavy atoms of protein and ligand — replace XXX with your protein residue count
+  nmropt=1,        ! Enable NMR-style input (temperature ramp)
+/
+&wt TYPE='TEMP0', istep1=0, istep2=25000,
+    value1=0.1, value2=300.0, /
+&wt TYPE='END' /
+

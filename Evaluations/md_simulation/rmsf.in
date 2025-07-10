@@ -1,0 +1,5 @@
+parm /home/yy33li/scratch/md_ffreed/lig1/com1_solv.prmtop
+trajin /home/yy33li/scratch/md_ffreed/lig1/outputs/prod.nc
+rms first :1-150@CA,C,N
+atomicfluct out /home/yy33li/scratch/md_ffreed/rmsf_outputs/rmsf_lig1.dat :16,23,25,30,32,34,65,66,67,68,70,82 byres
+run

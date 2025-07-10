@@ -1,0 +1,17 @@
+source leaprc.gaff 
+source leaprc.protein.ff14SB 
+source leaprc.water.opc
+lig = loadmol2 lig.mol2
+loadamberparams lig.frcmod
+check lig
+saveoff lig lig.lib
+saveamberparm lig lig.prmtop lig.rst7
+rep = loadpdb /Users/yanyili/Downloads/md_ffreed/pin1_6o34_clean.pdb
+complex = combine {rep lig}
+addIons complex Cl- 5
+charge complex
+check complex
+solvateBox complex TIP3PBOX 10.0
+saveamberparm complex com_solv.prmtop com_solv.inpcrd
+savepdb complex com_solv.pdb
+quit

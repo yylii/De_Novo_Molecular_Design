@@ -1,0 +1,19 @@
+&cntrl
+  imin=0,            ! MD run (no minimization)
+  irest=1, ntx=5,    ! Restart simulation, read coords + velocities
+  nstlim=100000,     ! Number of MD steps (100000 × 2 fs = 200 ps)
+  dt=0.002,          ! Time step in ps (2 fs)
+  ntc=2, ntf=2,      ! SHAKE on bonds to hydrogen
+  cut=10.0,          ! Nonbonded cutoff in Å
+  ntb=2,             ! Constant pressure periodic boundary (NPT)
+  ntp=1,             ! Isotropic pressure scaling (1 atm)
+  pres0=1.0,         ! Target pressure (atm)
+  taup=2.0,          ! Pressure relaxation time (ps)
+  ntt=3,             ! Langevin thermostat for temperature control
+  gamma_ln=2.0,      ! Collision frequency for Langevin thermostat (ps⁻¹)
+  temp0=300.0,       ! Target temperature (K)
+  ntpr=500,          ! Print energies every 500 steps (1 ps)
+  ntwx=500,          ! Write coordinates every 500 steps (1 ps)
+  ig=-1,             ! Random seed for thermostat
+/
+

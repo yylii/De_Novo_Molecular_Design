@@ -1,0 +1,7 @@
+parm /home/yy33li/scratch/md_ffreed/lig3/com_solv.prmtop
+trajin /home/yy33li/scratch/md_ffreed/lig3/outputs/prod.nc 1 last 1
+strip :WAT
+strip :Na+
+strip :Cl-
+hbond Lig_Protein_HBonds out /home/yy33li/scratch/md_ffreed/hbonds/hbond_lig3.dat donormask :UNL acceptormask :1-150&!@H= avgout /home/yy33li/scratch/md_ffreed/hbonds/avg_hbonds_lig3.dat
+run
