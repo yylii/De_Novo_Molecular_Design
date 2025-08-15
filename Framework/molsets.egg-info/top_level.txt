@@ -1,5 +1,0 @@
-env
-moses/dataset/data
-moses/metrics/NP_Score
-moses/metrics/SA_Score
-train
